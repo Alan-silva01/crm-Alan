@@ -115,7 +115,7 @@ export default function KanbanBoard() {
             onDragOver={handleDragOver}
             onDragEnd={handleDragEnd}
         >
-            <div className="flex gap-4 h-full overflow-x-auto pb-4 px-1">
+            <div className="flex gap-4 h-full w-full overflow-x-auto pb-4 px-1">
                 {colunas
                     .sort((a, b) => a.ordem - b.ordem)
                     .map((coluna) => (
