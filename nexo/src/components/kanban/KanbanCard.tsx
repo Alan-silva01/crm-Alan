@@ -75,10 +75,11 @@ export default function KanbanCard({ card }: KanbanCardProps) {
             {...listeners}
             onClick={() => selectCard(card)}
             className={`
-        card p-4 cursor-grab active:cursor-grabbing
-        hover:border-[var(--accent-purple)]/50
-        ${isDragging ? 'opacity-50 shadow-lg scale-[1.02]' : ''}
-        transition-all duration-200
+        relative bg-[var(--bg-elevated)] p-4 rounded-xl cursor-grab active:cursor-grabbing
+        border border-[var(--border-subtle)] hover:border-[var(--accent-purple)]/60
+        hover:shadow-lg hover:shadow-[var(--shadow-glow-purple)]
+        ${isDragging ? 'opacity-80 shadow-xl scale-[1.02] border-[var(--accent-purple)]' : ''}
+        transition-all duration-200 group
         animate-fadeIn
       `}
         >

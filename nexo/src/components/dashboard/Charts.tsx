@@ -12,31 +12,31 @@ export const DonutChart = () => (
             {/* Background Circle */}
             <circle cx="50" cy="50" r="40" stroke="#1f1f29" strokeWidth="15" fill="none" />
 
-            {/* Segments */}
-            {/* Segment 1: Hacktool - Purple */}
-            <circle cx="50" cy="50" r="40" stroke="#8b5cf6" strokeWidth="15" fill="none"
-                strokeDasharray="60 251" strokeDashoffset="0" className="opacity-100" />
-
-            {/* Segment 2: Virus - Green */}
+            {/* Segments - CRM Status */}
+            {/* Won/Qualified - Green */}
             <circle cx="50" cy="50" r="40" stroke="#10b981" strokeWidth="15" fill="none"
-                strokeDasharray="100 251" strokeDashoffset="-65" className="opacity-100" />
+                strokeDasharray="90 251" strokeDashoffset="0" className="opacity-100" />
 
-            {/* Segment 3: Phishing - Orange */}
-            <circle cx="50" cy="50" r="40" stroke="#f97316" strokeWidth="15" fill="none"
-                strokeDasharray="90 251" strokeDashoffset="-170" className="opacity-100" />
+            {/* Negotiation - Yellow/Orange */}
+            <circle cx="50" cy="50" r="40" stroke="#f59e0b" strokeWidth="15" fill="none"
+                strokeDasharray="70 251" strokeDashoffset="-95" className="opacity-100" />
+
+            {/* New/Lost - Blue/Purple */}
+            <circle cx="50" cy="50" r="40" stroke="#3b82f6" strokeWidth="15" fill="none"
+                strokeDasharray="80 251" strokeDashoffset="-170" className="opacity-100" />
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <span className="text-2xl font-bold text-white">9.1k</span>
-            <span className="text-xs text-[var(--text-muted)]">Alertas</span>
+            <span className="text-2xl font-bold text-white">482</span>
+            <span className="text-xs text-[var(--text-muted)]">Leads</span>
         </div>
     </div>
 );
 
 export const AreaChart = () => (
-    <div className="w-full h-40 flex items-end justify-between gap-1 relative overflow-hidden">
+    <div className="w-full h-full flex items-end justify-between gap-1 relative overflow-hidden min-h-[200px]">
         {/* Grid Lines */}
-        <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
-            {[...Array(4)].map((_, i) => (
+        <div className="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-50">
+            {[...Array(5)].map((_, i) => (
                 <div key={i} className="w-full h-[1px] bg-[var(--border-subtle)]" />
             ))}
         </div>
@@ -45,8 +45,8 @@ export const AreaChart = () => (
         <svg className="absolute inset-0 w-full h-full pb-6" preserveAspectRatio="none">
             <defs>
                 <linearGradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
-                    <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.3" />
-                    <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0" />
+                    <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3" />
+                    <stop offset="100%" stopColor="#3b82f6" stopOpacity="0" />
                 </linearGradient>
             </defs>
             <path
@@ -56,17 +56,17 @@ export const AreaChart = () => (
             <path
                 d="M0,80 C20,70 40,90 60,60 C80,30 100,50 120,40 C140,30 160,50 180,20 C200,10 220,30 240,40"
                 fill="none"
-                stroke="#8b5cf6"
-                strokeWidth="2"
+                stroke="#3b82f6"
+                strokeWidth="3"
             />
 
             {/* Dot at the end */}
-            <circle cx="75%" cy="30%" r="4" fill="#18181b" stroke="#8b5cf6" strokeWidth="2" />
+            <circle cx="95%" cy="20%" r="5" fill="#18181b" stroke="#3b82f6" strokeWidth="2" />
         </svg>
 
         {/* Tooltip mockup at the dot */}
-        <div className="absolute right-[20%] top-[15%] bg-[var(--bg-elevated)] px-2 py-1 rounded text-xs border border-[var(--border-subtle)] text-white shadow-lg">
-            $84.94
+        <div className="absolute right-[5%] top-[5%] bg-[var(--bg-elevated)] px-2 py-1 rounded text-xs border border-[var(--border-subtle)] text-white shadow-lg">
+            42 Leads hoje
         </div>
     </div>
 );
@@ -83,13 +83,13 @@ export const BarChart = () => {
                     className="flex-1 rounded-sm transition-all hover:opacity-80 relative group"
                     style={{
                         height: `${h}%`,
-                        backgroundColor: i % 2 === 0 ? 'var(--accent-purple)' : 'var(--accent-purple-light)',
+                        backgroundColor: i % 2 === 0 ? 'var(--accent-purple)' : 'var(--accent-blue)',
                         opacity: i > 8 ? 0.3 : 1
                     }}
                 >
                     {/* Tooltip on hover */}
                     <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-1.5 py-0.5 bg-black text-white text-[10px] rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 pointer-events-none">
-                        {h}
+                        {h} msg
                     </div>
                 </div>
             ))}

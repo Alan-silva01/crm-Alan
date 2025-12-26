@@ -33,11 +33,11 @@ export default function KanbanColumn({ coluna, cards }: KanbanColumnProps) {
     return (
         <div
             className={`
-        flex flex-col w-[320px] min-w-[320px] h-full
-        bg-[var(--bg-secondary)]/50 rounded-xl
+        flex flex-col w-[350px] min-w-[350px] h-full
+        bg-[var(--bg-card)]/40 backdrop-blur-md rounded-2xl
         border border-[var(--border-subtle)]
         ${isOver ? 'border-[var(--accent-purple)] bg-[var(--accent-purple)]/5' : ''}
-        transition-all duration-200
+        transition-all duration-200 shadow-sm
       `}
         >
             {/* Column Header */}

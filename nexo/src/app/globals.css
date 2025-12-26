@@ -2,13 +2,15 @@
 
 :root {
   /* Core Colors - Deep Dark Theme */
-  --bg-primary: #070709;
-  /* Deeper black */
-  --bg-secondary: #0f0f14;
-  /* Slightly lighter for sidebar/header */
-  --bg-card: #14141d;
-  /* Slightly lighter card for contrast */
-  --bg-elevated: #1c1c26;
+  /* Core Colors - Premium Dark Theme */
+  --bg-primary: #020203;
+  /* Almost pure black */
+  --bg-secondary: #0a0a0f;
+  /* Very deep blue-black */
+  --bg-card: #0e0e14;
+  /* Deep, rich dark */
+  --bg-elevated: #18181f;
+  /* Lighter for inputs/dropdowns */
   /* Dropdowns, tooltips */
   --bg-hover: #252533;
   /* Hover states */
